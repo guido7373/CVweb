@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <title>Juan Guido Facio</title>
+    <!-- colocar meta viewport para evitar zoom del usuario -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- coloca tus estilos css -->
+    <link rel="stylesheet" type="text/css" href="css/estilos_tester.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!-- alertify -->
+    <link rel="stylesheet" type="text/css" href="alertifyjs/css/alertify.css">
+    <link rel="stylesheet" type="text/css" href="alertifyjs/css/themes/default.css">
+    <script src="js/ajax.js"></script>
+    <script src="alertifyjs/alertify.js"></script>
+    <!--JQUERY-->
+    <script src="js/validar.js"></script>
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script>
+    jQuery(document).ready(function(){
+        
+        linkInterno = $('a[href^="#"]');
+        linkInterno.on('click',function(e) {
+        e.preventDefault();
+        var href = $(this).attr('href');
+        $('html, body').animate({ scrollTop : $( href ).offset().top }, 'slow');
+        });
+
+
+        var elemento = document.getElementById('datospersonales');
+        var posicion = elemento.getBoundingClientRect();
+ 
+        console.log(posicion.top, posicion.right, posicion.bottom, posicion.left);
+
+         $(document).scroll(function() {
+            var y = $(this).scrollTop();
+            if (y > 739) {
+              $("#flechi").show(800);
+              $("#social").show(800);
+            } else {
+              $("#flechi").hide(800);
+              $("#social").hide(800);
+            }
+          });
+
+
+         var ancho = $(window).width();
+ 
+        // Si trabajamos con una imagen desactivamos el background-size:cover;
+          if (ancho <= 1350){
+            $('body').css({
+              'background-size': 'initial'
+            });
+          }
+            
+         $(window).scroll(function()
+         {
+
+            var barra = $(window).scrollTop();
+            var posicion =  (barra * 0.10);
+            
+            $('body').css({
+              'background-position': '0-' + posicion + 'px'
+            });
+ 
+          });
+
+
+
+        $("#fotocv").click(function()
+        {
+                $("#fotocv").hide(1300).show(1300);     
+        });
+
+
+         $(".progress-bar").css({
+              'background-color': 'blue',
+              'background': 'blue',
+              'opacity': '0.8'
+            });
+
+
+        $('.carousel').on('carousel',function(){
+                      interval: 2500
+                    });
+    });
+    </script>
+
+</head>
+<body style="overflow-x:hidden;">
+
+            <div class="header">
+                 <div class="progress-container">
+                        <div class="progress-bar" id="myBar"></div>
+                  </div> 
+           </div>
+
+            <script>
+            window.onscroll = function() {myFunction()};
+
+              function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+               var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    var scrolled = (winScroll / height) * 100;
+               document.getElementById("myBar").style.width = scrolled + "%";
+                 }
+            </script>
+
+
+
+
+            <div id="preloader">
+                <div id="loader"></div>
+            </div>
+
+
+            <div itemscope itemtype="http://schema.org/Person">
+
+                      <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                        </script>
+
+
+                      <div id="social" style='display:none;'>
+                       <a href="#top" id="aflechi"><img id="flechi" src="img/flechi.png" alt="flechi" ></a>
+                      </div>
+
+                 <div class="container">
+                     <div id="topp">
+                     <h1 itemprop="author" id="top" class="text-center colores" >Juan Guido Facio</h1>
+                     </div>
+
+                     <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <nav id ="nav" class="navbar navbar-inverse">
+                                  <div class="container-fluid">
+                                   
+                                      <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                          <span class="icon-bar"></span>
+                                          <span class="icon-bar"></span>
+                                          <span class="icon-bar"></span> 
+                                        </button>
+                                      </div>
+                                     
+                                      <div class="collapse navbar-collapse" id="myNavbar" style="overflow-x:hidden;">
+                                        <ul id="ul" class="nav navbar-nav" style="overflow-x:hidden;">
+                                          <li class="li" style="overflow-x:hidden;"><a href="#datospersonales">Sobre&nbsp;Mi</a></li>
+                                          <li class="li" style="overflow-x:hidden;"><a href="#portifolio">Portfolio</a></li>
+                                          <li class="li" style="overflow-x:hidden;"><a href="#formulario">Contacto</a></li>
+                                        </ul>
+                                      </div>
+                                  </div>
+                              </nav>
+                          </div>
+                      </div>
+                           
+                     <br>
+                     <br>
+
+                      <div class="row">
+                          <div class="col-xs-12 col-sm-6">
+                              <a href="#">
+                              <br>
+                              
+                              <img itemprop="image" id="fotocv" src="img/cv.png" alt="1" class="img-responsive">
+                              </a>
+                              <br>
+                          </div>
+                          <div class="col-xs-12 col-sm-6">
+
+                              <h3 id="objetivo" class="text-center"></h3>
+
+                              <br>
+                              <div id="contenido" class="text-center">
+                                <div id="timediv">
+                                </div>
+                                <span class="glyphicon glyphicon-calendar"></span>
+                              </div>
+                          </div>
+                      </div>
+                  </div><!--fin contenedor 1-->
+
+
+                      <div class="container">
+                      <br>
+                          <div class="row">
+                              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                                      <div id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+                                            <!-- Indicators -->
+                                            <ol class="carousel-indicators">
+                                              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                              <!--ACA LEA GREGO PUNTITOS AL SLIDER-->
+                                            </ol>
+
+                                            <!-- Wrapper for slides -->
+                                            <div class="carousel-inner" role="listbox">
+                                                  <div class="item active">
+                                                    <img class="sli" src="img/slider4.gif" alt="...">
+                                                    <div class="carousel-caption">
+                                                    <h1>Windows Server</h1>
+                                                    </div>
+                                                  </div>
+                                                  <div class="item">
+                                                    <img class="sli" src="img/slider5.jpg" alt="...">
+                                                    <div class="carousel-caption">
+                                                    <h1>Bases de Datos</h1>
+                                                    </div>
+                                                  </div>
+                                                  <div class="item">
+                                                    <img class="sli" src="img/slider6.jpg" alt="...">
+                                                    <div class="carousel-caption">
+                                                    <h1>Linux</h1>
+                                                    </div>
+                                                  </div>
+                                            </div>
+
+                                            <!-- Controls -->
+                                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                              <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                              <span class="sr-only">Next</span>
+                                            </a>
+                                      </div>
+                                  
+                              </div>
+                          </div>
+                          <br>
+                      </div> 
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                              <h2 id="datospersonales" class="text-center colores">Datos Personales</h2>
+                                 <p class="sangria">
+                                 Fecha de nacimiento: 20 de Julio de 1991<br>
+                                 Edad: 26 años<br> 
+                                 Nacionalidad: Argentino<br>
+                                 Cuil: 20-36105650-8<br> 
+                                 Tipo y Número de documento: DNI 36.105.650<br>
+                                 Domicilio: Valentin Gomez 2972<br>
+                                 Código postal: 1191<br> 
+                                 Localidad: CABA<br>
+                                 <a href="mailto:guidofacio91@gmail.com" itemprop="email">
+                                 guidofacio91@gmail.com</a><br>
+                                 </p>
+                                 <h3 itemprop="telephone" id="celu" class="text-center">Celular: (011) 15 - 61300052<span class="glyphicon glyphicon-phone"></span></h3>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                              <h2 class="text-center colores">Datos Académicos</h2>
+                                 <p class="text-center">
+                                  <u><strong>Título: Analista de Sistemas Informático<span class="glyphicon glyphicon-book"></span></strong></u><br> 
+                                  Área de estudio: Sistemas<br>
+                                  Nivel de estudio: Terciario en curso (3er año)<br> 
+                                  Institución: Da Vinci Escuela de Tecnología<br> 
+                                  Fecha inicio: 01 de Marzo del 2015<br> 
+                                  Fecha finalización: En curso<br>
+                                  <br>
+                                  <br>  
+                                  <u><strong>Título: Bachiller con Orientación en Economía<span class="glyphicon glyphicon-book"></span></strong></u><br>
+                                  y Gestión de las Organizaciones.<br>
+                                  Área de estudio: Bachiller<br>
+                                  Nivel de estudio: Secundario graduado<br>
+                                  Institución: Polimodal N°2 Florida Blanca<br>
+                                  Fecha inicio: 05 de Marzo del 2008<br>
+                                  Fecha finalización: 10 de Marzo del 2011<br>
+                                 </p>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                              <h2 class="text-center colores">Conocimientos</h2>
+                                <p class="text-center">
+                                Poseo conocimientos de programación "Back-End" orientada a objetos (Java y PHP) y en lenguajes "Front-End" Web como HTML5(Bootstrap),CSS3 y JavaScript. Trabajé con bases de datos (Oracle y SQL Server).
+                                </p>
+
+                                <h2 class="text-center colores">Idiomas</h2>
+                                
+                                <p class="text-center">
+                                Inglés escrito: Básico.<br>
+                                Inglés oral: Básico.<br>
+                                </p>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                              <h2 class="text-center colores">Experiencia Laboral</h2>
+                             
+                              <p class="text-center"><u><b>Desarrollador Jr en Indra Argentina<span class="glyphicon glyphicon-globe"></span></b></u></p>
+
+                              <p>
+                              Proyectos: Cota (Tecnología HPS de escritorio) y Aplicación Canal On Line (Tecnología Java web).<br>
+                      				Cliente: Telefónica.<br>
+            
+                      				Puesto: Soporte y Desarrollo.<br>
+                              </p>
+
+                              <p class="text-center"><mark>Actividades  <span class="glyphicon glyphicon-th-list"></span></mark></p>
+                              <p>
+                      				■ Desarrollo y Mantenimiento de sus aplicaciones.<br>
+                      				■ Resolución de incidencias.<br>
+                              ■ Documentación de desarrollos.<br>
+                              </p>
+
+                              <p class="text-center"><mark>Skills <span class="glyphicon glyphicon-star"></span></mark></p>
+                              <p>
+                      				+ Desarrollo de queries SQL.<br>
+                      				+ Monitoreo de procesos Linux (PUTTY).<br>
+                      				+ Análisis de logs.<br>
+                      				+ Desarrollo PL-SQL.<br>
+                              </p>
+                              <br>
+                              <p>
+                              <u><b>Soporte Funcional HelpDesk en DC Sistemas<span class="glyphicon glyphicon-globe"></span></b></u><br>
+
+                              Soporte Funcional a su aplicación web de gestión y administración de seguros desarrollada en plataforma (C# .NET). 
+                      				<br>
+                              </p>
+
+                      				<p class="text-center"><mark>Actividades <span class="glyphicon glyphicon-th-list"></span></mark></p>
+                              
+                              <p>
+                              ■ Soporte Funcional (análisis de nuevos requerimientos y asesoramiento a usuarios en el uso de la aplicación).<br>
+                              ■ Análisis y seguimiento de incidencias.<br>
+                              ■ Interlocución y resolución de problemas en conjunto con los distintos equipos.<br>
+                              </p>
+
+                              <p class="text-center"><mark>Skills <span class="glyphicon glyphicon-star"></span></mark></p>
+                              <p>
+                      				+ Seguros.<br>
+                      				+ Windows Server(IIS Internet Information Server).<br>
+                      				+ SQL Server(Queries, Backups , Profiler y Stored Procedures).<br>
+                              </p>
+                          </div>
+                      </div><!-- fin fila 3 -->
+                  </div><!--fin contenedor 3-->
+
+                      <div class="container">
+                          <section>
+                              <br>
+                              <h2 id="portifolio" class="text-center colores"> 
+                              <b>
+                              <i>
+                              Portfolio
+                              </i>
+                              </b>
+                              </h2>
+                              <h3 class="text-center colores">(Tecnologias que domino)</h3>
+                              
+                              <div id="clinux"><img id="linux" src="img/domino.jpg" alt="domino"></div>
+
+                              <div id="divdiscos">
+                                  
+                                      <div class="row">
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="uno">
+                                              <h2 class="h2disc">Java SE</h2>
+              								                <!--<a data-fancybox="portfolio" href="img/t1java.png" title="JAVA SE">-->
+                                              <img class="classname" src="img/t1.png" alt="JAVA SE">
+              								                <!--</a>-->
+                                              </article>
+                                          </div>
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="dos">
+                                              <h2 class="h2disc">Eclipse</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/t22.png" title="Eclipse">-->
+                                              <img class="classname" src="img/t2.jpg" alt="Eclipse">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="tres">
+                                              <h2 class="h2disc">PUTTY</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/t33.png" title="PUTTY">-->
+                                              <img class="classname" src="img/t3.png" alt="PUTTY">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="uno">
+                                              <h2 class="h2disc">Office</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/t44.png" title="Office">-->
+                                              <img class="classname"  src="img/t4.png" alt="Office">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                      </div>
+
+
+                                       <div class="row">
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="dos">
+                                              <h2 class="h2disc">PHP</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/t99.png" title="PHP">-->
+                                              <img class="classname" src="img/php.png" alt="PHP">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="tres">
+                                              <h2 class="h2disc">PL-SQL</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/t55.png" title="PL-SQL">-->
+                                              <img class="classname" src="img/t5.jpg" alt="PL-SQL">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="uno">
+                                              <h2 class="h2disc">Sql Server</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/sql.jpg" title="Sql Server">-->
+                                              <img class="classname" src="img/sql.jpg" alt="SqlServ">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="dos">
+                                              <h2 class="h2disc">HTML</h2>
+                                             <!--<a data-fancybox="portfolio" href="img/t66.png" title="HTML">-->
+                                              <img class="classname" src="img/t6.png" alt="HTML">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="tres">
+                                              <h2 class="h2disc">JavaScript</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/t10jav.png" title="JavaScript">-->
+                                              <img class="classname" src="img/t10.png" alt="JavaScript">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="tres">
+                                              <h2 class="h2disc">Bootstrap</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/bootstrapf.png" title="Bootstrap">-->
+                                              <img class="classname" src="img/t11.jpg" alt="Boostrap">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                      </div>
+
+                                       <div class="row">
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="tres">
+                                              <h2 class="h2disc">Css 3</h2>
+                                             <!-- <a data-fancybox="portfolio" href="img/t77.png" title="Css 3">-->
+                                              <img class="classname" src="img/css3.jpg" alt="CSS3">
+                                              <!--</a>-->
+                                              </article>
+                                          </div>
+                                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                              <article class="tres">
+                                              <h2 class="h2disc">Linux</h2>
+                                              <!--<a data-fancybox="portfolio" href="img/todos333.png" title="Linux">-->
+                                              <img class="classname" src="img/linux.png" alt="Linux">
+                                             <!--</a>-->
+                                              </article>
+                                          </div>
+                                      </div>
+                              </div>
+                          </section>
+                      </div>
+
+                  <div class="container">
+                    <br>
+                      <div class="row">
+                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <form id="formulario" action="enviar.php" method="post" onsubmit="">
+                             
+                                    <div id="contvid">
+                                          <img src="img/lala.gif" alt="fuego" id="videin">
+
+                                          <div class="form-group">
+                                            <br>
+                                            <p id="contactame" class="text-center">Contactame <span class="glyphicon glyphicon-send"></span></p>
+                                            <input type="hidden" name="hidden" id="hidden" value="false">
+                                          
+                                              <div class="input-group" id="nombre" >
+                                                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                                                <input type="text" class="form-control" id="nombreimp" placeholder="Nombre"  required name="nombre">
+                                              </div>
+                                          </div>
+                                          
+                                          <div class="form-group">
+                                              <div class="input-group" id="email" >
+                                                <div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+                                                <input type="email" class="form-control" id="emailimp" placeholder="E-mail" required name="email">
+                                              </div>
+                                          </div>
+                                        
+                                          <div class="form-group">
+                                              <div class="input-group" id="divconsulta">
+                                                  <div class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></div>
+                                                  <textarea class="form-control" id="consulta" rows="3" placeholder="Consulta" required name="consulta"></textarea>
+                                                  <br>
+                                                  <br>
+                                                  <br>
+                                                  <br>
+                                                  <br>
+                                              </div>
+                                              <br>
+                                              <br>
+                                            <div id="divbot">
+                                              <input type="submit" class="glyphicon text-center" value="&#x2709;" id="bot" onclick="validar();" data-toggle="tooltip" title="Enviar Mensaje! (Para urgencias comunicarse al celular 11-61300052)">
+                                            </div>
+                                            <br>
+                                          </div>
+                                    
+
+                                    </div>
+                            
+                            </form>
+                          </div>
+                        </div>
+                      <br>
+                  </div>
+
+                      <div class="container">
+                      <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <h2 class="text-center">Mi institucion Educativa 
+                        <span class="glyphicon glyphicon-education"></span>
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                      </h2>
+                      <div id="map">
+                       <iframe id="mapi" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.992348920769!2d-58.398202749707856!3d-34.60435498036334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaea670d4e67%3A0x2198c954311ad6d9!2sEscuela+Da+Vinci!5e0!3m2!1ses!2sar!4v1499871306782"></iframe>
+                       <br>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+
+                      <div class="container fb">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <h3 class="text-center" id="dejacom">Dejame tu comentario <span class="glyphicon glyphicon-comment"></span></h3>
+                          <div id="contenidito">
+                            <div class="fb-comments" data-href="http://www.guidofacio.com/" data-width="100%" data-numposts="3" data-mobile></div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>   
+
+                      <div class="container">
+                       <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                              <br>
+                              <footer>
+                                <div id="contvid1">
+                                    <img src="img/fueguito-iloveimg.gif" alt="fuego" id="videin1">
+                                      
+                                    <img id="foot1" src="img/todos33.png" alt="foot1">
+                                    <img id="foot2" src="img/todos33.png" alt="foot2">
+                                    <a href="https://www.linkedin.com/in/guido-facio-1a4b30b0/" target="new"><img class="icoredes" id="ln" src="img/ln.png"  alt="linkedin"></a>
+                                    <a href="https://www.facebook.com/GuidoF73" target="new"><img class="icoredes" id="fb" src="img/fb.png" alt="facebook"></a>
+                                    <p id="pfoot" class="colores">SEGUIME EN</p>
+                                    <p id="pfoot2" class="colores">REDES</p>
+                                    <p id="pfoot3" class="colores">SOCIALES</p>
+                                </div>
+                              </footer>
+                          </div>
+                       </div>
+                      </div>
+
+                 <!-- 1. Add latest jQuery and fancyBox files -->
+
+              	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+              	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+              	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+                  <script src="js/bootstrap.min.js"></script>
+
+                  <script>
+
+                      $("#formulario").on( "mouseenter", function() 
+                      {
+                        $(this).css( 'cursor', 'url(img/cursor.png), auto' );
+                        $("#formulario input").css( 'cursor', 'url(img/cursor.png), auto' );
+                        $("#consulta").css( 'cursor', 'url(img/cursor.png), auto' );
+                      }).on( "mouseleave", function() {
+                        $(this).css({'cursor':'default'});
+                        $("#consulta").css({'cursor':'default'});
+                        $("#formulario input").css({'cursor':'default'});
+                      });
+
+                      $("#objetivo").on( "mouseenter", function() 
+                      {
+                        $(this).fadeTo("slow",0.5);
+                      }).on( "mouseleave", function() {
+                        $(this).fadeTo("slow",1.5);
+                      });
+
+                      $("#linux").on( "mouseenter", function() 
+                      {
+                        $(this).fadeOut(1500);
+                      }).on( "mouseleave", function() {
+                        $(this).fadeIn(1500);
+                      });
+
+                      $(".classname").on("mouseenter", function() 
+                      {
+                        $(this).fadeTo("slow",0.5);
+                      }).on( "mouseleave", function() {
+                        $(this).fadeTo("slow",1.5);
+                      });
+
+                      $(".sli").on("mouseenter", function() 
+                      {
+                        $(this).fadeTo("slow",0.5);
+                      }).on( "mouseleave", function() {
+                        $(this).fadeTo("slow",1.5);
+                      });
+
+                      $(".li").on("mouseenter", function() 
+                      {
+                        $(this).animate({fontSize:"22px"},300);
+                      }).on( "mouseleave", function() {
+                        $(this).animate({fontSize:"20px"},300); 
+                      });
+
+                      $(window).on("load",function() {
+
+                          $('#preloader').fadeOut('slow');
+
+
+                          $.php = 'ip.php';
+
+                          $.ajax({
+                                    url: $.php,
+                                    type: 'post',
+                                    success: function(response) { console.log(response); }
+                                });
+
+                        
+                                var i = 0;
+                                var txt = 'Objetivo: “Desarrollar mi carrera profesional en una empresa de primera línea en el mercado, que fomente constantemente mi crecimiento sobre nuevas tecnologias creando soluciones informáticas.”'; /* The text */
+                                var speed = 60; /* The speed/duration of the effect in milliseconds */
+
+                                $(function typeWriter() {
+
+                                  
+
+                                  if (i <= txt.length) {
+                                    document.getElementById("objetivo").innerHTML += txt.charAt(i);
+                                    i++;
+                                    setTimeout(typeWriter, speed);
+                
+                                  }
+
+                                     
+                                   });
+
+  
+                        
+                      });
+
+
+                  </script>
+        </div>
+
+</body>
+</html>
